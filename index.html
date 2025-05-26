@@ -7,7 +7,39 @@
         img { max-width:200px }
     </style>
 </head>
-<body>
+<body><!-- 用户注册表单 -->
+<div class="signup-box">
+  <h3>立即注册</h3>
+  <form id="signupForm">
+    <input type="text" placeholder="用户名" required>
+    <input type="email" placeholder="邮箱" required>
+    <input type="password" placeholder="密码" required>
+    <button type="submit">注册</button>
+  </form>
+</div>
+
+<style>
+/* 基础样式 */
+.signup-box {
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: 400px;
+  margin: 30px auto;
+}
+input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}
+button {
+  background: #1da1f2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+</style>
     <h1>产品列表</h1>
     <div id="products"></div>
 
