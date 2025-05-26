@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的产品商店</title>
+    <style>
+        .product { border:1px solid #ddd; margin:20px; padding:20px }
+        img { max-width:200px }
+    </style>
+</head>
+<body>
+    <h1>产品列表</h1>
+    <div id="products"></div>
+
+    <script>
+    // 替换成你的JSONBox地址（下一步会教）
+    const API_URL = 'https://jsonbox.io/box_xxxxxx'
+    
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => {
+          let html = ''
+          data.forEach(item => {
+              html += `
+              <div class="product">
+                  <h2>${item.name} - ¥${item.price}</h2>
+                  <img src="${item.image}">
+                  <p>${item.desc}</p>
+                  <img src="${item.qrcode}" width="100">
+              </div>
+              `
+          })
+          document.getElementById('products').innerHTML = html
+      })
+    </script>
+</body>
+</html>
